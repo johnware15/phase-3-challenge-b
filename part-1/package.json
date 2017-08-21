@@ -11,5 +11,12 @@
     "url": "phase-3-challenge-b"
   },
   "author": "johnware15",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "body-parser-json": "^1.9.2",
+    "express": "^4.15.4",
+    "json-parser": "^1.1.5",
+    "morgan": "^1.8.2"
+  },
+  "dependencies": {}
 }
