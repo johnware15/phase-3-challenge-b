@@ -1,0 +1,19 @@
+{
+  "name": "part-2",
+  "version": "1.0.0",
+  "description": "Grocery database",
+  "main": "database.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "MIT"
+  },
+  "author": "johnware15",
+  "license": "MIT",
+  "devDependencies": {
+    "pg": "^7.1.2",
+    "pg-promise": "^6.5.1"
+  }
+}
