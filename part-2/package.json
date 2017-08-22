@@ -13,6 +13,8 @@
   "author": "johnware15",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
     "pg": "^7.1.2",
     "pg-promise": "^6.5.1"
   }
