@@ -4,13 +4,6 @@ const pg = require('pg')
 const database = new pg.Client('postgres://localhost:9876/grocery_store')
 database.connect()
 
-const productsBySection = section => {
-  return database.any(`SELECT name, section
-    FROM grocery_items
-    WHERE section = '${section}'
-  `)
-}
-
 const orderByShopperId = id => {
   return database.any(`SELECT orders.id, SUM(grocery_items.price) AS total_cost
   FROM orders
@@ -22,6 +15,14 @@ const orderByShopperId = id => {
   GROUP BY orders.id
   `)
 }
+
+const productsBySection = section => {
+  return database.any(`SELECT name, section
+    FROM grocery_items
+    WHERE section = '${section}'
+  `)
+}
+
 
 const realShoppers = () => {
   return database.any(`
