@@ -1,21 +1,27 @@
 {
   "name": "part-2",
   "version": "1.0.0",
-  "description": "Grocery database",
-  "main": "database.js",
+  "description": "Grocer database",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "MIT"
+    "test": "mocha js:babel-core/register ./database_test.js",
+    "dbinit": "dropdb grocery_store; createdb grocery_store; psql grocery_store < ./schema.sql; psql grocery_store < ./load-data.sql",
+    "dropdb": "dropdb grocery_store",
+    "createdb": "createdb grocery_store",
+    "schemaUpdate": "psql grocery_store < ./schema.sql",
+    "seedData": "psql grocery_store < ./load-data.sql"
   },
   "author": "johnware15",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
     "chai": "^4.1.1",
-    "mocha": "^3.5.0",
-    "pg": "^7.1.2",
-    "pg-promise": "^6.5.1"
+    "mocha": "^3.5.0"
+  },
+  "dependencies": {
+    "pg": "^7.2.0",
+    "pg-promise": "^6.5.1",
+    "postgresql": "0.0.1"
   }
 }

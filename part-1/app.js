@@ -10,7 +10,7 @@ const app = express()
 app.use(morgan('combined'))
 
 app.get('/api/days/:day', (req, res) => {
-  let day = req.params.toLowerCase()
+  let day = req.params.day.toLowerCase()
   let daysOfWeek = {
     monday: 1,
     tuesday: 2,

@@ -11,81 +11,83 @@
       <h1>Grocer</h1>
       <button type="button" id="cart-button">
         Cart
-        &nbsp;<span id="cart-item-count">(4)</span>
+        &nbsp;<span id="cart-item-count">(0)</span>
       </button>
     </header>
-    <div id="modal" class="modal">
-      <div id="modal-box">
-        <span class="close-modal">X</span>
-        <p>Cart</p>
-        <ul id="cart-items">
-          <li>
-          </li>
-        </ul>
-        <button id="clear-cart">Clear</button>
-        <span id="cart-price"></span>
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <h1 class="cart-title">Cart</h1>
+        <h1 class="cart-close">X</h1>
+      </div>
+      <div class="modal-items-section"></div>
+      <div class="modal-footer">
+        <button>Clear</button>
+        <div class="modal-total-section">
+          <span class="modal-total-title">Total</span>
+          <span class="modal-total-price">$0.00</span>
+        </div>
       </div>
     </div>
-
     <div class="flex flex-full">
       <div class="sidebar">
         <ul>
           <h4>Sections</h4>
-          <li>Produce</li>
-          <li>Deli</li>
-          <li>Frozen</li>
+          <a href="#produce"><li>Produce</li></a>
+          <a href="#deli"><li>Deli</li></a>
+          <a href="#frozen"><li>Frozen</li></a>
         </ul>
       </div>
       <div class="content">
         <h1>Groceries</h1>
-        <ul class="item-section">
+        <ul id="produce" class="item-section">
           <h3>Produce</h3>
           <li class="item flex flex-row-between">
             <span class="item-name">Onions</span>
             <span class="item-price">$1.11</span>
-            <button type="button" class="add-to-cart">Add to cart</button>
+            <button type="button">Add to cart</button>
           </li>
           <li class="item flex flex-row-between">
             <span class="item-name">Tomatoes</span>
             <span class="item-price">$1.56</span>
-            <button type="button" class="add-to-cart">Add to cart</button>
+            <button type="button">Add to cart</button>
           </li>
           <li class="item flex flex-row-between">
             <span class="item-name">Carrots</span>
             <span class="item-price">$2.88</span>
-            <button type="button" class="add-to-cart">Add to cart</button>
+            <button type="button">Add to cart</button>
           </li>
         </ul>
 
-        <ul class="item-section">
+        <ul id="deli" class="item-section">
           <h3>Deli</h3>
           <li class="item flex flex-row-between">
             <span class="item-name">Cold Cuts</span>
             <span class="item-price">$1.47</span>
-            <button type="button" class="add-to-cart">Add to cart</button>
+            <button type="button">Add to cart</button>
           </li>
         </ul>
 
-        <ul class="item-section">
+        <ul id="frozen" class="item-section">
           <h3>Frozen</h3>
           <li class="item flex flex-row-between">
             <span class="item-name">Orange Juice</span>
             <span class="item-price">$2.52</span>
-            <button type="button" class="add-to-cart">Add to cart</button>
+            <button type="button">Add to cart</button>
           </li>
           <li class="item flex flex-row-between">
             <span class="item-name">Ice Cream</span>
             <span class="item-price">$14.08</span>
-            <button type="button" class="add-to-cart">Add to cart</button>
+            <button type="button">Add to cart</button>
           </li>
           <li class="item flex flex-row-between">
             <span class="item-name">Pizza</span>
             <span class="item-price">$16.61</span>
-            <button type="button" class="add-to-cart">Add to cart</button>
+            <button type="button">Add to cart</button>
           </li>
         </ul>
       </div>
     </div>
+    <script src="grocer.js" charset="utf-8"></script>
   </body>
-  <script src="./grocer.js"></script>
 </html>
