@@ -1,11 +1,9 @@
-'use strict'
+const pgp = require('pg-promise')();
+const CONNECTION_STRING = `pg://${process.env.USER}@localhost:5432/grocery_store`
+const db = pgp(CONNECTION_STRING)
 
-const pg = require('pg')
-const database = new pg.Client('postgres://localhost:9876/grocery_store')
-database.connect()
-
-const orderByShopperId = id => {
-  return database.any(`SELECT orders.id, SUM(grocery_items.price) AS total_cost
+const ordersByShopperId = id => {
+  return db.any(`SELECT orders.id, SUM(grocery_items.price) AS total_cost
   FROM orders
   JOIN orders_items
   ON order_items.id = orders.id
@@ -17,7 +15,7 @@ const orderByShopperId = id => {
 }
 
 const productsBySection = section => {
-  return database.any(`SELECT name, section
+  return db.any(`SELECT name, section
     FROM grocery_items
     WHERE section = '${section}'
   `)
@@ -25,8 +23,7 @@ const productsBySection = section => {
 
 
 const realShoppers = () => {
-  return database.any(`
-    SELECT shoppers.firstname, COUNT(orders.id) FROM order_items
+  return db.any(`SELECT shoppers.firstname, COUNT(orders.id) FROM order_items
     JOIN orders
     ON orders.id = order_items
     JOIN shoppers
@@ -37,6 +34,6 @@ const realShoppers = () => {
 
 module.exports = {
   productsBySection,
-  orderByShopperId,
+  ordersByShopperId,
   realShoppers
 }

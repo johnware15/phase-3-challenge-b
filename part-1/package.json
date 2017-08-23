@@ -9,16 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "phase-3-challenge-b"
+    "url": "https://github.com/johnware15/phase-3-challenge-b.git"
   },
   "author": "johnware15",
   "license": "MIT",
   "devDependencies": {
-    "body-parser": "^1.17.2",
-    "body-parser-json": "^1.9.2",
-    "express": "^4.15.4",
     "json-parser": "^1.1.5",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4"
+  }
 }

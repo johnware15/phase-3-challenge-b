@@ -1,4 +1,4 @@
-\c grocery_items(name, price, section) FROM './grocerycsv' DELIMITER ',' CSV HEADER;
+\copy grocery_items(name, price, section) FROM './grocery.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO orders (shopper_id)
   VALUES (1);
