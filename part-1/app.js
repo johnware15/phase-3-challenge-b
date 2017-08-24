@@ -29,7 +29,7 @@ app.get('/api/days/:day', (req, res) => {
 
 
 //////////////////////////////////////////////////////////////////////////////////////
-
+//study jsonParser => request comes in, hits middleware
 app.post('/api/array/concat', jsonParser, (req, res) => {
   let array1 = req.body.array1
   let array2 = req.body.array2
